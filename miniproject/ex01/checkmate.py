@@ -123,7 +123,7 @@ def explain(board):
         return
     attackers = find_attackers(rows)
 
-    grid = [list(row) for row in rows]
+    grid = [[square if square in PIECES else "." for square in row] for row in rows]
 
     # draw * on attack path
     for piece, r, c, path in attackers:
